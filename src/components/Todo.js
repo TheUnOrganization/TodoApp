@@ -21,6 +21,12 @@ function Todo() {
         );
     }
 
+    function deleteProductHandler() {
+        setProducts((curProducts) => 
+            curProducts.concat({})
+        );
+    }
+
     return(
         <form>
             <div>
@@ -38,6 +44,7 @@ function Todo() {
                 ))}
             </div>
             <button onClick={addProductHandler}>Add Todo</button>
+            <button onClick={deleteProductHandler}>Delete Todo</button>
         </form>
     )
 }
