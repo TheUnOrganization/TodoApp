@@ -27,6 +27,12 @@ function Todo() {
         );
     }
 
+    function editProductHandler() {
+        setProducts((curProducts) =>
+            curProducts.concat({})
+        );
+    }
+
     return(
         <form>
             <div>
