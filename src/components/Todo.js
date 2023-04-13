@@ -33,24 +33,34 @@ function Todo() {
         );
     }
 
+    function searchProductHandler() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('products');
+
+        for (let i = 0; i < x.length; i++) {
+            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                x[i].style.display="none";
+            } else {
+                x[i].style.display="list-item"
+            }
+        }
+    }
+
     return(
         <form>
             <div>
                 <input type="text" placeholder='Enter a todo...'/>
-                <button>Add</button>
+                <button onClick={addProductHandler}>Add</button>
+                <input className={classes.searchbar} onkeyup="searchProductHandler()" type="text" placeholder='Filter for a todo...'></input>
             </div>
-            <div className={classes.searchbar}>
-                <input type="text" placeholder='Filter for a todo...'/>
-            </div>
-            <div>
+            <div id="products">
                 {products.map((product) => (
                     <li key={product.id}>
                         {product.title}
                     </li>
                 ))}
             </div>
-            <button onClick={addProductHandler}>Add Todo</button>
-            <button onClick={deleteProductHandler}>Delete Todo</button>
         </form>
     )
 }

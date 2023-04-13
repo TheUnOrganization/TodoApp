@@ -1,3 +1,19 @@
+form {
+    background-color: #c7c7c7;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0;
+    position: relative;
+}
+
 .searchbar {
-    display: flex;
+    margin-left: 25em;
+}
+
+button {
+    background-color: #ffebcd;
+}
+
+.products {
+    display: list-item
 }
